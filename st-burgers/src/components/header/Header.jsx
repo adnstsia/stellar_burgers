@@ -1,8 +1,15 @@
 import React from 'react';
+import {SmallText} from '../../fonts/Fonts'
 import { BurgerIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { ListIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { Logo } from '@ya.praktikum/react-developer-burger-ui-components';
+
+
+import "./header.css";
+
+
+
 
 class IconBurger extends React.Component {
   render() {
@@ -39,23 +46,36 @@ class IconLogo extends React.Component {
 class Header extends React.Component {
   render() {
     return (
-      <header>
-        <div>
+      <header className='header'>
+
+<section className='headerSection'>
+  {/* Block with 2 items. I made it for make good html-doc */}
+  <div className='mixedItems'>
+  <div className='navigationItem constructItem'>
           <IconBurger />
-          <h2 className='nono'>Конструктор</h2>
+          <SmallText text="Конструктор" />
         </div>
 
-        <div>
+        <div className='navigationItem orderItem'>
           <IconList />
-          <h2>Лента Заказов</h2>
+          <SmallText text="Лента Заказов" />
         </div>
 
-        <IconLogo />
 
-        <div>
+
+  </div>
+
+        <div className='logo'>
+        <IconLogo className='logo' /> 
+        </div>
+
+        <div className='navigationItem'>
           <IconProfile />
-          <h2>Личный кабинет</h2>
+          <SmallText text="Личный кабинет" />
+
         </div>
+
+</section>
 
       </header>
     );

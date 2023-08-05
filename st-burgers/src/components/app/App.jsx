@@ -1,14 +1,17 @@
 import React from 'react';
 
 import Header from '../header/Header';
-// import Main from '../main/main';
+import ToMakeOrder from '../toMakeOrder/ToMakeOrder';
+
+import "../app/App.css"
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className='app'>
         <Header />
-        {/* <Main /> */}
+        <ToMakeOrder />
+
       </div>
     );
   }
