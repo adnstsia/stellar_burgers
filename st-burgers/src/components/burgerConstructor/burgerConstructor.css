@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: end;
   box-sizing: border-box;
+  position: relative;
 }
 
 .burgerConstructor__element {
@@ -21,10 +22,10 @@
   margin: 0;
   padding: 0;
   height: fit-content;
-width: fit-content;
-display: flex;
-justify-items: center;
-align-items: center;
+  width: fit-content;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
 .burgerConstructor__img {
@@ -50,6 +51,7 @@ align-items: center;
   padding: 0;
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .burgerConstructor__order {
@@ -57,40 +59,39 @@ align-items: center;
   padding: 0;
   max-height: 640px;
   overflow: scroll;
-  overflow-x: hidden;
-
-/* Стилизация скроллбара для браузеров, использующих веб-кит */
-::-webkit-scrollbar {
-  width: 8px;
-  background-color: #2F2F37; /* Фон скроллбара */
+  overflow-x: hidden; 
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #8585AD; /* Цвет ползунка */
-}
+  /* Стилизация скроллбара для браузеров, использующих веб-кит */
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: #2f2f37; /* Фон скроллбара */
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Цвет ползунка при наведении */
-}
+  ::-webkit-scrollbar-thumb {
+    background-color: #8585ad; /* Цвет ползунка */
+  }
 
-/* Стилизация скроллбара для Firefox */
-* {
-  scrollbar-color: #8585AD #2F2F37;
-  scrollbar-width: thin; /* Толщина скроллбара */
-}
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Цвет ползунка при наведении */
+  }
 
-/* Стилизация скроллбара для Microsoft Edge и Internet Explorer */
-*::-ms-scrollbar {
-  width: 8px;
-  background-color: #2F2F37; /* Фон скроллбара */
-}
+  /* Стилизация скроллбара для Firefox */
+  * {
+    scrollbar-color: #8585ad #2f2f37;
+    scrollbar-width: thin; /* Толщина скроллбара */
+  }
 
-*::-ms-scrollbar-thumb {
-  background-color: #8585AD; /* Цвет ползунка */
-}
+  /* Стилизация скроллбара для Microsoft Edge и Internet Explorer */
+  *::-ms-scrollbar {
+    width: 8px;
+    background-color: #2f2f37; /* Фон скроллбара */
+  }
 
-*::-ms-scrollbar-thumb:hover {
-  background-color: #555; /* Цвет ползунка при наведении */
-}
+  *::-ms-scrollbar-thumb {
+    background-color: #8585ad; /* Цвет ползунка */
+  }
 
-}
+  *::-ms-scrollbar-thumb:hover {
+    background-color: #555; /* Цвет ползунка при наведении */
+  }
