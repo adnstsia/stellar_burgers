@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  ConstructorElement,
-  Button,
-} from "@ya.praktikum/react-developer-burger-ui-components";
+import { ConstructorElement, Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { DigitsMedium } from "../../fonts/Fonts";
 import Popup from "../popup/Popup";
@@ -14,16 +11,18 @@ class IconCurrency extends React.Component {
   }
 }
 
+
 class BurgerConstructor extends React.Component {
   render() {
-    const { ingredients } = this.props;
+    const { ingredients, onOpenPopup } = this.props;
 
     return (
       <section className="burgerConstructor">
         <div
           className="burgerConstructor__order"
           style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-        >
+        >      
+
           <ConstructorElement
             type="top"
             isLocked={true}
@@ -57,7 +56,7 @@ class BurgerConstructor extends React.Component {
             <DigitsMedium text="600" />
             <IconCurrency />
           </div>
-          <Button htmlType="button" type="primary" size="large">
+          <Button htmlType="button" type="primary" size="large" onClick={onOpenPopup}>
             Оформить заказ
           </Button>
         </div>
