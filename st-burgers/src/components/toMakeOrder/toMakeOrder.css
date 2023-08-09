@@ -1,15 +1,15 @@
 .toMakeOrder {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    height: 600px;
-    max-width: 1240px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  max-width: 1240px;
 }
 
 .toMakeOrder__createBurgerSection {
-    margin: 20px 0 0 0;
-    padding: 0;
-    display: flex;
-    column-gap: 40px;
+  margin: 20px 0 0 0;
+  padding: 0;
+  display: flex;
+  column-gap: 40px;
 }

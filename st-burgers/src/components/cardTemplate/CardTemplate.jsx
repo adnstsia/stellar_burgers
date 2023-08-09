@@ -1,39 +1,33 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { SmallText } from "../../fonts/Fonts";
-import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
-import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import { Counter, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import "./cardTemplate.css";
-
-class IconCurrency extends React.Component {
-  render() {
-    return <CurrencyIcon type="primary" />;
-  }
-}
 
 class CardTemplate extends React.Component {
   render() {
-    const { text } = this.props;
-    const { img } = this.props;
-    const { cost } = this.props;
+    const { text, img, cost, onClick } = this.props; 
 
     return (
-      <section className="cardTemplate">
-        <Counter
-          className="counter"
-          count={1}
-          size="default"
-          extraClass="m-1"
-        />
-        <img src={img} />
+      <div className="cardTemplate" onClick={onClick}> 
+        <Counter className="counter" count={1} size="default" extraClass="m-1" />
+        <img src={img} alt={text} />
 
         <div className="cardTemplate__cost">
           <h2 className="cardTemplate__text"> {cost} </h2>
-          <IconCurrency />
+          <CurrencyIcon type="primary" />
         </div>
         <SmallText text={text} />
-      </section>
+      </div>
     );
   }
 }
+
+CardTemplate.propTypes = {
+  text: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  cost: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default CardTemplate;
