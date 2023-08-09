@@ -5,10 +5,8 @@
   transform: translate(-50%, -50%);
   z-index: 2000;
   background-color: #1c1c21;
-  width: 720px;
-  height: 718px;
   margin: 0;
-  padding: 120px 100px 120px 100px;
+  padding: 0;
   border-radius: 40px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid #000000;
@@ -18,6 +16,43 @@
   opacity: 1;
   visibility: visible;
   box-sizing: border-box;
+  height:fit-content;
+  width: fit-content;
+}
+
+.popupAboutOrder {
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 538px;
+  max-width: 720px;
+}
+
+.popupAboutOrder__block {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-content: center;
+  justify-content: center;
+}
+
+.popupAboutOrder__text {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-content: center;
+}
+
+.popupAboutOrder__textHolder {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 .overlay {
@@ -47,6 +82,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 120px 100px 120px 100px;
+  max-height: 720px;
+  max-width: 718px;
 }
 
 .popup__number {

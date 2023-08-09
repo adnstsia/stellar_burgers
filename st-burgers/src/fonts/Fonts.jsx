@@ -55,6 +55,7 @@ class DigitsLarge extends React.Component {
     return <p className="text text_type_digits-large">{text}</p>;
   }
 }
+
 export {
   SmallText,
   LargeText,
@@ -62,5 +63,5 @@ export {
   DefaultText,
   DigitsMedium,
   DigitsLarge,
-  DigitsDefault,
+  DigitsDefault
 };

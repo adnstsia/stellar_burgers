@@ -6,10 +6,10 @@ import "./cardTemplate.css";
 
 class CardTemplate extends React.Component {
   render() {
-    const { text, img, cost, onClick } = this.props; // Добавляем onClick из пропс
+    const { text, img, cost, onClick } = this.props; 
 
     return (
-      <div className="cardTemplate" onClick={onClick}> {/* Добавляем onClick */}
+      <div className="cardTemplate" onClick={onClick}> 
         <Counter className="counter" count={1} size="default" extraClass="m-1" />
         <img src={img} alt={text} />
 
@@ -27,7 +27,7 @@ CardTemplate.propTypes = {
   text: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   cost: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired, // Добавляем новый пропс
+  onClick: PropTypes.func.isRequired,
 };
 
 export default CardTemplate;

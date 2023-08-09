@@ -7,7 +7,7 @@ import "./toMakeOrder.css";
 
 class ToMakeOrder extends React.Component {
   render() {
-    const { ingredients, onOpenPopup } = this.props;
+    const { ingredients, onOpenPopup, onOpenIngredientsPopup } = this.props;
 
     return (
       <div className="toMakeOrder">
@@ -15,8 +15,8 @@ class ToMakeOrder extends React.Component {
           <LargeText text="Соберите бургер" />
         </div>
         <div className="toMakeOrder__createBurgerSection">
-          <BurgerIngredients ingredients={ingredients} />
-          <BurgerConstructor ingredients={ingredients} onOpenPopup={onOpenPopup} />
+          <BurgerIngredients ingredients={ingredients} onOpenPopup={onOpenPopup} />
+          <BurgerConstructor ingredients={ingredients} onOpenPopup={onOpenIngredientsPopup} />
         </div>
       </div>
     );
@@ -24,32 +24,3 @@ class ToMakeOrder extends React.Component {
 }
 
 export default ToMakeOrder;
-
-
-
-// import React from "react";
-// import BurgerIngredients from "../burgerIngredients/BurgerIngredients";
-// import BurgerConstructor from "../burgerConstructor/BurgerConstructor";
-// import { LargeText } from "../../fonts/Fonts";
-
-// import "./toMakeOrder.css";
-
-// class ToMakeOrder extends React.Component {
-//   render() {
-//     const { ingredients } = this.props;
-
-//     return (
-//       <div className="toMakeOrder">
-//         <div>
-//           <LargeText text="Соберите бургер" />
-//         </div>
-//         <div className="toMakeOrder__createBurgerSection">
-//           <BurgerIngredients ingredients={ingredients} />{" "}
-//           <BurgerConstructor ingredients={ingredients} />{" "}
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default ToMakeOrder;

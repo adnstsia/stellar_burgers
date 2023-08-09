@@ -42,13 +42,7 @@ class BurgerConstructor extends React.Component {
             />
           ))}
 
-          <ConstructorElement
-            type="bottom"
-            isLocked={true}
-            text="Краторная булка N-200i (низ)"
-            price={200}
-            thumbnail="https://example.com/bun-image.png"
-          />
+
         </div>
 
         <div className="burgerConstructor__createOrder">
