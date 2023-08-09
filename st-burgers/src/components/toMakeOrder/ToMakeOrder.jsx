@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "@ya.praktikum/react-developer-burger-ui-components";
 import BurgerIngredients from "../burgerIngredients/BurgerIngredients";
 import BurgerConstructor from "../burgerConstructor/BurgerConstructor";
 import { LargeText } from "../../fonts/Fonts";
@@ -12,11 +13,19 @@ class ToMakeOrder extends React.Component {
     return (
       <div className="toMakeOrder">
         <div>
-          <LargeText text="Соберите бургер" />
+          <div className="p-5">
+            <LargeText text="Соберите бургер" />
+          </div>
         </div>
         <div className="toMakeOrder__createBurgerSection">
-          <BurgerIngredients ingredients={ingredients} onOpenPopup={onOpenPopup} />
-          <BurgerConstructor ingredients={ingredients} onOpenPopup={onOpenIngredientsPopup} />
+          <BurgerIngredients
+            ingredients={ingredients}
+            onOpenPopup={onOpenPopup}
+          />
+          <BurgerConstructor
+            ingredients={ingredients}
+            onOpenPopup={onOpenIngredientsPopup}
+          />
         </div>
       </div>
     );

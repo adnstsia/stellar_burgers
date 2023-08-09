@@ -6,10 +6,3 @@
   align-items: center;
   max-height: 1240px;
 }
-
-.popupAboutOrder__bigText {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-items: start;
-}

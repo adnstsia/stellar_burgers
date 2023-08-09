@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import CardTemplate from "../cardTemplate/CardTemplate";
-import Popup from "../popup/Popup";
+import { Box } from "@ya.praktikum/react-developer-burger-ui-components";
+
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
 import "./burgerIngredients.css";
@@ -25,6 +26,7 @@ class BurgerIngredients extends React.Component {
           <Button htmlType="button" type="secondary" size="medium">
             Булки
           </Button>
+
           <Button htmlType="button" type="secondary" size="medium">
             Соусы
           </Button>
@@ -32,9 +34,11 @@ class BurgerIngredients extends React.Component {
             Начинки
           </Button>
         </div>
+        <div className="p-5" />
         <section className="burgerIngredients">
           <div className="burgerIngredients__menu">
-            <h2>Булки</h2>
+            <h2 className="zeroBox">Булки</h2>
+            <div className="p-3" />
             <div className="burgerIngredients__cardContainer">
               {buns.map((ingredient) => (
                 <CardTemplate
@@ -46,7 +50,11 @@ class BurgerIngredients extends React.Component {
                 />
               ))}
             </div>
-            <h2>Соусы</h2>
+            <div className="p-5" />
+
+            <h2 className="zeroBox">Соусы</h2>
+            <div className="p-3" />
+
             <div className="burgerIngredients__cardContainer">
               {sauces.map((ingredient) => (
                 <CardTemplate
@@ -57,18 +65,22 @@ class BurgerIngredients extends React.Component {
                   onClick={() => onOpenPopup(ingredient)}
                 />
               ))}
-              <h2>Начинки</h2>
-              <div className="burgerIngredients__cardContainer">
-                {fillings.map((ingredient) => (
-                  <CardTemplate
-                    key={ingredient._id}
-                    text={ingredient.name}
-                    img={ingredient.image}
-                    cost={ingredient.price}
-                    onClick={() => onOpenPopup(ingredient)}
-                  />
-                ))}
-              </div>
+            </div>
+            <div className="p-5" />
+
+            <h2 className="zeroBox">Начинки</h2>
+            <div className="p-3" />
+
+            <div className="burgerIngredients__cardContainer">
+              {fillings.map((ingredient) => (
+                <CardTemplate
+                  key={ingredient._id}
+                  text={ingredient.name}
+                  img={ingredient.image}
+                  cost={ingredient.price}
+                  onClick={() => onOpenPopup(ingredient)}
+                />
+              ))}
             </div>
           </div>
         </section>

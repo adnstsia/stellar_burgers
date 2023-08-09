@@ -1,8 +1,11 @@
 import React from "react";
-import { ConstructorElement, Button } from "@ya.praktikum/react-developer-burger-ui-components";
+import {
+  ConstructorElement,
+  Button,
+} from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { DigitsMedium } from "../../fonts/Fonts";
-import Popup from "../popup/Popup";
+import Popup from "../popup/Modal";
 import "./burgerConstructor.css";
 
 class IconCurrency extends React.Component {
@@ -10,7 +13,6 @@ class IconCurrency extends React.Component {
     return <CurrencyIcon type="primary" />;
   }
 }
-
 
 class BurgerConstructor extends React.Component {
   render() {
@@ -21,8 +23,7 @@ class BurgerConstructor extends React.Component {
         <div
           className="burgerConstructor__order"
           style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-        >      
-
+        >
           <ConstructorElement
             type="top"
             isLocked={true}
@@ -41,8 +42,6 @@ class BurgerConstructor extends React.Component {
               thumbnail={ingredient.image}
             />
           ))}
-
-
         </div>
 
         <div className="burgerConstructor__createOrder">
@@ -50,7 +49,12 @@ class BurgerConstructor extends React.Component {
             <DigitsMedium text="600" />
             <IconCurrency />
           </div>
-          <Button htmlType="button" type="primary" size="large" onClick={onOpenPopup}>
+          <Button
+            htmlType="button"
+            type="primary"
+            size="large"
+            onClick={onOpenPopup}
+          >
             Оформить заказ
           </Button>
         </div>

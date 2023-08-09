@@ -53,6 +53,10 @@
   height: 538px;
 }
 
+.zeroBox {
+  margin: 0;
+  padding: 0;
+}
 /* Стилизация скроллбара для браузеров, использующих веб-кит */
 ::-webkit-scrollbar {
   width: 8px;
