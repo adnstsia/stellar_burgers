@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Box } from "@ya.praktikum/react-developer-burger-ui-components";
 import Header from "../header/Header";
 import ToMakeOrder from "../toMakeOrder/ToMakeOrder";
-import Popup from "../popup/Popup";
-import { DigitsLarge, DigitsMedium } from "../../fonts/Fonts";
-import { DigitsDefault } from "../../fonts/Fonts";
-import { DigitsSmall } from "../../fonts/Fonts";
-import { MediumText } from "../../fonts/Fonts";
-import { DefaultText } from "../../fonts/Fonts";
-import { SmallText } from "../../fonts/Fonts";
-import doneImage from "../../images/done.png";
-import cross from "../../images/cross.svg";
+import Modal from "../popup/Modal";
+import OrderDetails from "../popup/types/OrderDetails";
+import IngredientDetails from "../popup/types/IngredientDetails";
 import "../app/App.css";
 
 const API_URL = "https://norma.nomoreparties.space/api/ingredients";
@@ -67,7 +62,11 @@ const App = () => {
 
   return (
     <div className="app">
-      <Header />
+      <a>
+    <Header />
+      </a>
+      <div className="p-5" />
+
       <ToMakeOrder
         ingredients={ingredients}
         onOpenPopup={(ingredient) => handleOpenPopup(ingredient, "order")}
@@ -76,7 +75,7 @@ const App = () => {
         }
       />
       {isPopupOpen && selectedIngredient && (
-        <Popup
+        <Modal
           className="popup popupAboutOrder"
           onClose={handleClosePopup}
           onClickOverlay={handlePopupOverlayClick}
@@ -84,80 +83,17 @@ const App = () => {
           {popupType === "order" && (
             <>
               {/* Вывод информации о заказе */}
-              <div className="popupAboutOrder">
-                <div className="popupAboutOrder__bigText">
-                  <MediumText text="Детали ингредиента" />
-                </div>
-                <img
-                  src={selectedIngredient.image}
-                  alt={selectedIngredient.name}
-                />
-                <h2>
-                  <DefaultText text={selectedIngredient.name} />
-                </h2>
-                <div className="popupAboutOrder__block">
-                  <div className="popupAboutOrder__textHolder">
-                    <p>
-                      <SmallText text="Калории, ккал" />
-                    </p>
-                    <h3 className="popupAboutOrder__text">
-                      <DigitsDefault text={selectedIngredient.calories} />
-                    </h3>
-                  </div>
-                  <div className="popupAboutOrder__textHolder">
-                    <p>
-                      <SmallText text="Белки, г" />
-                    </p>
-                    <h3 className="popupAboutOrder__text">
-                      <DigitsDefault text={selectedIngredient.proteins} />
-                    </h3>
-                  </div>
-                  <div>
-                    <p>
-                      <SmallText text="Жиры, г" />
-                    </p>
-                    <h3 className="popupAboutOrder__text">
-                      {selectedIngredient.fat}
-                    </h3>
-                  </div>
-                  <div className="popupAboutOrder__textHolder">
-                    <p>
-                      <SmallText text="Углеводы, г" />
-                    </p>
-                    <h3 className="popupAboutOrder__text">
-                      <DigitsDefault
-                        className="popupAboutOrder__text"
-                        text={selectedIngredient.carbohydrates}
-                      />
-                    </h3>
-                  </div>
-                </div>
-              </div>
+
+              <IngredientDetails selectedIngredient={selectedIngredient} />
             </>
           )}
           {popupType === "ingredient" && (
             <>
               {/* Вывод информации об ингредиенте */}
-              <section className="popup__container">
-                <h2 className="popup__number">
-                  <DigitsLarge className="popup__number" text="12345" />
-                </h2>
-                <h2 className="popup__description">
-                  <MediumText text="идентификатор заказа" />
-                </h2>
-                <div className="popup__image">
-                  <img src={doneImage} alt="Здесь должна быть картинка" />
-                </div>
-                <h2 className="popup__text">
-                  <DefaultText text="Ваш заказ начали готовить" />
-                </h2>
-                <p className="popup__textAdvice">
-                  <DefaultText text="Дождитесь готовности на орбитальной станции" />
-                </p>
-              </section>
+              <OrderDetails />
             </>
           )}
-        </Popup>
+        </Modal>
       )}
     </div>
   );
