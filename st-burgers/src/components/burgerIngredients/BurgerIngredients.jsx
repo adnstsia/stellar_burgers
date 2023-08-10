@@ -7,7 +7,7 @@ import { Box } from "@ya.praktikum/react-developer-burger-ui-components";
 
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
-import "./burgerIngredientsStyles.css";
+import styles from "./burgerIngredientsStyles.css";
 
 // ... (прочий импорт)
 
@@ -28,7 +28,7 @@ class BurgerIngredients extends React.Component {
 
     return (
       <div>
-        <div className="burgerIngredients__buttons">
+        <div className={styles.burgerIngredients__buttons}>
           <Button htmlType="button" type="secondary" size="medium">
             Булки
           </Button>
@@ -41,11 +41,11 @@ class BurgerIngredients extends React.Component {
           </Button>
         </div>
         <div className="p-5" />
-        <section className="burgerIngredients">
-          <div className="burgerIngredients__menu">
+        <section className={styles.burgerIngredients}>
+          <div className={styles.burgerIngredients__menu}>
             <h2 className="zeroBox">Булки</h2>
             <div className="p-3" />
-            <div className="burgerIngredients__cardContainer">
+            <div className={styles.burgerIngredients__cardContainer}>
               {buns.map((ingredient) => (
                 <CardTemplate
                   key={ingredient._id}
@@ -58,10 +58,10 @@ class BurgerIngredients extends React.Component {
             </div>
             <div className="p-5" />
 
-            <h2 className="zeroBox">Соусы</h2>
+            <h2 className={styles.zeroBox}>Соусы</h2>
             <div className="p-3" />
 
-            <div className="burgerIngredients__cardContainer">
+            <div className={styles.burgerIngredients__cardContainer}>
               {sauces.map((ingredient) => (
                 <CardTemplate
                   key={ingredient._id}
@@ -74,10 +74,10 @@ class BurgerIngredients extends React.Component {
             </div>
             <div className="p-5" />
 
-            <h2 className="zeroBox">Начинки</h2>
+            <h2 className={styles.zeroBox}>Начинки</h2>
             <div className="p-3" />
 
-            <div className="burgerIngredients__cardContainer">
+            <div className={styles.burgerIngredients__cardContainer}>
               {fillings.map((ingredient) => (
                 <CardTemplate
                   key={ingredient._id}
