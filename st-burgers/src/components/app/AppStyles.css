@@ -6,3 +6,7 @@
   align-items: center;
   max-height: 1240px;
 }
+
+.headerAsLink {
+text-decoration: none;
+}

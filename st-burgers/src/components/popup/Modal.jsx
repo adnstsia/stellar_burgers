@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import { DigitsLarge, MediumText, DefaultText } from "../../fonts/Fonts";
 import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
-import cross from "../../images/cross.svg";
+import cross from "../../images/cross.svg"
 
-import "./popup.css";
+import styles from "./Modal.css";
 
 const Modal = ({ onClose, onClickOverlay, children }) => {
+
+  const [ingredients, setIngredients] = useState([]);
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const [selectedIngredient, setSelectedIngredient] = useState(null);
+  const [popupType, setPopupType] = useState(null);
   const [isClosed, setClosed] = useState(false);
 
   useEffect(() => {
@@ -22,23 +28,42 @@ const Modal = ({ onClose, onClickOverlay, children }) => {
     setClosed(true);
   };
 
-  return (
+  const handleKeyPress = (event) => {
+    if (event.key === "Escape") {
+      handleClosePopup();
+    }
+  };
+
+  useEffect(() => {
+    if (isPopupOpen) {
+      document.addEventListener("keydown", handleKeyPress);
+    } else {
+      document.removeEventListener("keydown", handleKeyPress);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [isPopupOpen]);
+
+  return ReactDOM.createPortal (
     <>
+    ReactDOM.createPortal()
       <div
         className={`overlay ${isClosed ? "overlay--closed" : ""}`}
         onClick={onClickOverlay}
       ></div>
       <div className={`popup ${isClosed ? "popup--closed" : ""}`}>
         <button
-          className="popup__close"
+          className={styles.popup__close}
           type="button"
           onClick={handleClosePopup}
         >
           <img src={cross} alt="Закрыть" />
         </button>
-        <div className="popup__content-centered">{children}</div>
+        <div>{children}</div>
       </div>
-    </>
+    </>,
+     document.getElementById('App')
   );
 };
 

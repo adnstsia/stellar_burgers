@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
+
 import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import CardTemplate from "../cardTemplate/CardTemplate";
 import { Box } from "@ya.praktikum/react-developer-burger-ui-components";
 
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
-import "./burgerIngredients.css";
+import "./burgerIngredientsStyles.css";
 
 // ... (прочий импорт)
 
 class BurgerIngredients extends React.Component {
+  static propTypes = {
+    ingredients: PropTypes.array.isRequired,
+    onOpenPopup: PropTypes.func.isRequired,
+  };
   render() {
     const { ingredients, onOpenPopup } = this.props;
     const buns = ingredients.filter((ingredient) => ingredient.type === "bun");

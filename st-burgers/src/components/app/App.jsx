@@ -5,7 +5,7 @@ import ToMakeOrder from "../toMakeOrder/ToMakeOrder";
 import Modal from "../popup/Modal";
 import OrderDetails from "../popup/types/OrderDetails";
 import IngredientDetails from "../popup/types/IngredientDetails";
-import "../app/App.css";
+import styles from "./AppStyles.css";
 
 const API_URL = "https://norma.nomoreparties.space/api/ingredients";
 
@@ -43,26 +43,14 @@ const App = () => {
     handleClosePopup();
   };
 
-  const handleKeyPress = (event) => {
-    if (event.key === "Escape") {
-      handleClosePopup();
-    }
-  };
 
-  useEffect(() => {
-    if (isPopupOpen) {
-      document.addEventListener("keydown", handleKeyPress);
-    } else {
-      document.removeEventListener("keydown", handleKeyPress);
-    }
-    return () => {
-      document.removeEventListener("keydown", handleKeyPress);
-    };
-  }, [isPopupOpen]);
 
   return (
-    <div className="app">
-      <Header />
+    <div className={styles.app}>
+      <a href="#" className={styles.headerAsLink}>
+              <Header />
+      </a>
+
       <div className="p-5" />
 
       <ToMakeOrder
@@ -74,7 +62,7 @@ const App = () => {
       />
       {isPopupOpen && selectedIngredient && (
         <Modal
-          className="popup popupAboutOrder"
+          className={`${styles.popup} ${styles.popupAboutOrder}`}
           onClose={handleClosePopup}
           onClickOverlay={handlePopupOverlayClick}
         >
