@@ -5,7 +5,7 @@ import ToMakeOrder from "../toMakeOrder/ToMakeOrder";
 import Modal from "../popup/Modal";
 import OrderDetails from "../popup/types/OrderDetails";
 import IngredientDetails from "../popup/types/IngredientDetails";
-import styles from "./AppStyles.css";
+import styles from "./AppStyles.module.css";
 
 const API_URL = "https://norma.nomoreparties.space/api/ingredients";
 
@@ -47,7 +47,9 @@ const App = () => {
 
   return (
     <div className={styles.app}>
+<div id="modal"></div>
       <a href="#" className={styles.headerAsLink}>
+      <div id="modal-container"></div>
               <Header />
       </a>
 

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { SmallText } from "../../fonts/Fonts";
 import { Counter, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import styles from "./CardTemplateStyles.css";
+import styles from "./CardTemplate.module.css";
 
 class CardTemplate extends React.Component {
   render() {

@@ -5,7 +5,7 @@ import { ListIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { ProfileIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { Logo } from "@ya.praktikum/react-developer-burger-ui-components";
 
-import styles from "./HeaderStyles.css";
+import styles from "./HeaderStyles.module.css";
 
 class IconBurger extends React.Component {
   render() {

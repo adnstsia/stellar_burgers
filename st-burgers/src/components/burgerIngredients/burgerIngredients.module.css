@@ -30,6 +30,23 @@
   margin: 0;
   padding: 0;
   display: flex;
+  color: white;
+}
+
+.burgerIngredients__button {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  color: #8585ad;
+  width: 200px;
+  border-bottom: 2px solid white;
+  transition: border-bottom 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.burgerIngredients__button:hover {
+  border-bottom: 2px solid #4c4cff;
+  color: white;
 }
 
 .button_type_secondary {
@@ -39,10 +56,7 @@
   transition: border-bottom 0.3s ease;
   border-bottom: 2px solid white;
   border-radius: 0%;
-}
-
-.button_type_secondary:hover {
-  border-bottom: 2px solid #4c4cff;
+  color: white;
 }
 
 .popupIngredients {

@@ -7,9 +7,7 @@ import { Box } from "@ya.praktikum/react-developer-burger-ui-components";
 
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
-import styles from "./burgerIngredientsStyles.css";
-
-// ... (прочий импорт)
+import styles from "./burgerIngredients.module.css";
 
 class BurgerIngredients extends React.Component {
   static propTypes = {
@@ -29,21 +27,25 @@ class BurgerIngredients extends React.Component {
     return (
       <div>
         <div className={styles.burgerIngredients__buttons}>
-          <Button htmlType="button" type="secondary" size="medium">
+          <div className={styles.burgerIngredients__button}><Button htmlType="button" type="secondary" size="medium">
             Булки
           </Button>
+            </div>
 
-          <Button htmlType="button" type="secondary" size="medium">
+            <div className={styles.burgerIngredients__button}><Button htmlType="button" type="secondary" size="medium">
             Соусы
           </Button>
-          <Button htmlType="button" type="secondary" size="medium">
+          </div>
+
+          <div className={styles.burgerIngredients__button}><Button htmlType="button" type="secondary" size="medium">
             Начинки
           </Button>
+          </div>
         </div>
         <div className="p-5" />
         <section className={styles.burgerIngredients}>
           <div className={styles.burgerIngredients__menu}>
-            <h2 className="zeroBox">Булки</h2>
+            <h2 className={styles.zeroBox}>Булки</h2>
             <div className="p-3" />
             <div className={styles.burgerIngredients__cardContainer}>
               {buns.map((ingredient) => (

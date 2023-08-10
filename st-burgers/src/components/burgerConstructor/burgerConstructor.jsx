@@ -7,7 +7,7 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { DigitsMedium } from "../../fonts/Fonts";
-import styles from "./BurgerConstructorStyles.css";
+import styles from "./BurgerConstructorStyles.module.css";
 
 class IconCurrency extends React.Component {
   render() {

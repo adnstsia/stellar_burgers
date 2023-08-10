@@ -1,31 +1,15 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { DigitsLarge, MediumText, DefaultText } from "../../fonts/Fonts";
-import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
-import cross from "../../images/cross.svg"
+import cross from "../../images/cross.svg";
 
-import styles from "./Modal.css";
+import styles from "./Modal.module.css";
 
-const Modal = ({ onClose, onClickOverlay, children }) => {
-
-  const [ingredients, setIngredients] = useState([]);
-  const [isPopupOpen, setPopupOpen] = useState(false);
-  const [selectedIngredient, setSelectedIngredient] = useState(null);
-  const [popupType, setPopupType] = useState(null);
-  const [isClosed, setClosed] = useState(false);
-
-  useEffect(() => {
-    if (isClosed) {
-      const timeout = setTimeout(() => {
-        onClose();
-      }, 300);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [isClosed, onClose]);
+const Modal = ({ onClose, onClickOverlay, children, isClosed }) => {
+  const [isClosedState, setClosedState] = useState(false);
 
   const handleClosePopup = () => {
-    setClosed(true);
+    setClosedState(true);
   };
 
   const handleKeyPress = (event) => {
@@ -35,24 +19,32 @@ const Modal = ({ onClose, onClickOverlay, children }) => {
   };
 
   useEffect(() => {
-    if (isPopupOpen) {
-      document.addEventListener("keydown", handleKeyPress);
-    } else {
-      document.removeEventListener("keydown", handleKeyPress);
+    if (isClosedState) {
+      const timeout = setTimeout(() => {
+        onClose();
+      }, 300);
+
+      return () => clearTimeout(timeout);
     }
+  }, [isClosedState, onClose]);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  }, [isPopupOpen]);
+  }, []);
 
-  return ReactDOM.createPortal (
+  return ReactDOM.createPortal(
     <>
-    ReactDOM.createPortal()
       <div
-        className={`overlay ${isClosed ? "overlay--closed" : ""}`}
+        className={`${styles.overlay} ${isClosedState ? "overlay--closed" : ""}`}
         onClick={onClickOverlay}
       ></div>
-      <div className={`popup ${isClosed ? "popup--closed" : ""}`}>
+      <div
+        className={`${styles.popup} ${isClosedState ? "popup--closed" : ""}`}
+      >
         <button
           className={styles.popup__close}
           type="button"
@@ -63,8 +55,8 @@ const Modal = ({ onClose, onClickOverlay, children }) => {
         <div>{children}</div>
       </div>
     </>,
-     document.getElementById('App')
+    document.getElementById("modal")
   );
 };
 
-export default Modal ;
+export default Modal;

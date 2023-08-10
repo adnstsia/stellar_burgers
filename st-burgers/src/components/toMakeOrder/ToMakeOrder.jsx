@@ -4,7 +4,7 @@ import BurgerIngredients from "../burgerIngredients/BurgerIngredients";
 import BurgerConstructor from "../burgerConstructor/burgerConstructor";
 import { LargeText } from "../../fonts/Fonts";
 
-import styles from "./ToMakeOrder.css";
+import styles from "./ToMakeOrder.module.css";
 
 class ToMakeOrder extends React.Component {
   render() {
