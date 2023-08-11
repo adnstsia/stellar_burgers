@@ -37,25 +37,31 @@ class Header extends React.Component {
       <header className={styles.header}>
         <section className={styles.headerSection}>
           <div className={styles.mixedItems}>
-            <div className={`${styles.navigationItem} ${styles.constructItem}`}>
+            <a
+              href="#"
+              className={`${styles.navigationItem} ${styles.constructItem}`}
+            >
               <IconBurger />
               <SmallText text="Конструктор" />
-            </div>
+            </a>
 
-            <div className={`${styles.navigationItem} ${styles.orderItem}`}>
+            <a
+              href="#"
+              className={`${styles.navigationItem} ${styles.constructItem}`}
+            >
               <IconList />
               <SmallText text="Лента Заказов" />
-            </div>
+            </a>
           </div>
 
           <div className={styles.logo}>
             <IconLogo className={styles.logo} />
           </div>
 
-          <div className={styles.navigationItem}>
+          <a href="#" className={styles.navigationItem}>
             <IconProfile />
             <SmallText text="Личный кабинет" />
-          </div>
+          </a>
         </section>
       </header>
     );
