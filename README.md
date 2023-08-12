@@ -1,2 +1,4 @@
 Hello World!!  
-It's a test-text for "main" brunch.
+It's a study-project.
+
+Status: in progress.. .
