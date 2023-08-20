@@ -5,7 +5,7 @@ import { ListIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { ProfileIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { Logo } from "@ya.praktikum/react-developer-burger-ui-components";
 
-import "./header.css";
+import styles from "./HeaderStyles.module.css";
 
 class IconBurger extends React.Component {
   render() {
@@ -34,28 +34,34 @@ class IconLogo extends React.Component {
 class Header extends React.Component {
   render() {
     return (
-      <header className="header">
-        <section className="headerSection">
-          <div className="mixedItems">
-            <div className="navigationItem constructItem">
+      <header className={styles.header}>
+        <section className={styles.headerSection}>
+          <div className={styles.mixedItems}>
+            <a
+              href="#"
+              className={`${styles.navigationItem} ${styles.constructItem}`}
+            >
               <IconBurger />
               <SmallText text="Конструктор" />
-            </div>
+            </a>
 
-            <div className="navigationItem orderItem">
+            <a
+              href="#"
+              className={`${styles.navigationItem} ${styles.constructItem}`}
+            >
               <IconList />
               <SmallText text="Лента Заказов" />
-            </div>
+            </a>
           </div>
 
-          <div className="logo">
-            <IconLogo className="logo" />
+          <div className={styles.logo}>
+            <IconLogo className={styles.logo} />
           </div>
 
-          <div className="navigationItem">
+          <a href="#" className={styles.navigationItem}>
             <IconProfile />
             <SmallText text="Личный кабинет" />
-          </div>
+          </a>
         </section>
       </header>
     );

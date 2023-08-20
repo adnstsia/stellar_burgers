@@ -1,9 +1,13 @@
 import React from "react";
-import { ConstructorElement, Button } from "@ya.praktikum/react-developer-burger-ui-components";
+import PropTypes from "prop-types";
+
+import {
+  ConstructorElement,
+  Button,
+} from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { DigitsMedium } from "../../fonts/Fonts";
-import Popup from "../popup/Popup";
-import "./burgerConstructor.css";
+import styles from "./BurgerConstructorStyles.module.css";
 
 class IconCurrency extends React.Component {
   render() {
@@ -11,18 +15,21 @@ class IconCurrency extends React.Component {
   }
 }
 
-
 class BurgerConstructor extends React.Component {
+  static propTypes = {
+    ingredients: PropTypes.array.isRequired,
+    onOpenPopup: PropTypes.func.isRequired,
+  };
+
   render() {
     const { ingredients, onOpenPopup } = this.props;
 
     return (
-      <section className="burgerConstructor">
+      <section className={styles.burgerConstructor}>
         <div
-          className="burgerConstructor__order"
+          className={styles.burgerConstructor__order}
           style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-        >      
-
+        >
           <ConstructorElement
             type="top"
             isLocked={true}
@@ -41,16 +48,19 @@ class BurgerConstructor extends React.Component {
               thumbnail={ingredient.image}
             />
           ))}
-
-
         </div>
 
-        <div className="burgerConstructor__createOrder">
-          <div className="burgerConstructor__total">
+        <div className={styles.burgerConstructor__createOrder}>
+          <div className={styles.burgerConstructor__total}>
             <DigitsMedium text="600" />
             <IconCurrency />
           </div>
-          <Button htmlType="button" type="primary" size="large" onClick={onOpenPopup}>
+          <Button
+            htmlType="button"
+            type="primary"
+            size="large"
+            onClick={onOpenPopup}
+          >
             Оформить заказ
           </Button>
         </div>

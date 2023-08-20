@@ -63,5 +63,5 @@ export {
   DefaultText,
   DigitsMedium,
   DigitsLarge,
-  DigitsDefault
+  DigitsDefault,
 };
