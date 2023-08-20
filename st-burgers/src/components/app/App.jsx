@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Box } from "@ya.praktikum/react-developer-burger-ui-components";
-import { Box } from "@ya.praktikum/react-developer-burger-ui-components";
 import Header from "../header/Header";
 import ToMakeOrder from "../toMakeOrder/ToMakeOrder";
 import Modal from "../popup/Modal";
@@ -74,20 +73,16 @@ const App = () => {
               {/* Вывод информации о заказе */}
 
               <IngredientDetails selectedIngredient={selectedIngredient} />
-
-              <IngredientDetails selectedIngredient={selectedIngredient} />
             </>
           )}
           {popupType === "ingredient" && (
             <>
               {/* Вывод информации об ингредиенте */}
               <OrderDetails />
-              <OrderDetails />
-            </>
+                          </>
           )}
         </Modal>
-        </Modal>
-      )}
+              )}
     </div>
   );
 };
